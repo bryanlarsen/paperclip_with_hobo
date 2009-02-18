@@ -8,7 +8,7 @@ It adds two small things:
  
         has_attached_file :photo
 
-   to your model, and then run the migration generator
+   to your model, and then run the migration generator to add the `photo_file_name`, `photo_content_type`, `photo_file_size` and `photo_updated_at` fields to the table.
    
  - Declares an input field
  
@@ -16,7 +16,7 @@ It adds two small things:
           <%= file_field_tag param_name_for_this, attributes %>
         </def>
         
-    (to get this, you need `<include src="paperclip" plugin="paperclip_with_hobo">` in application.dryml)
+    (to get this, you need `<include src="paperclip" plugin="paperclip_with_hobo" />` in application.dryml)
 
 ## Important Note
 
