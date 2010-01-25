@@ -5,14 +5,19 @@ Install this plugin alongside [paperclip](http://jimneath.org/2008/04/17/papercl
 It adds two small things:
 
  - Automatically declares the fields for you, so you can just add
- 
+
         has_attached_file :photo
 
-   to your model, and then run the migration generator.   All options
-   are automatically passed on to paperclip's `has_attached_file`.
-   
+   to your model, and then run the migration generator to add the
+   `photo_file_name`, `photo_content_type`, `photo_file_size` and
+   `photo_updated_at` fields to the table.  All options
+   are automatically passed on to paperclip's `has_attached_file`, so
+   you can also type:
+
+        has_attached_file :photo, :url => '/assets/:filename', :path => ':rails_root/public/assets/:filename'
+
  - Declares an input field
- 
+
         <def tag="input" for="Paperclip::Attachment">
           <%= file_field_tag param_name_for_this, attributes %>
         </def>
